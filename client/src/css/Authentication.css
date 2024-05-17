@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.contain{
+background: rgb(60, 104, 212);
+    background: linear-gradient(16deg, rgba(60, 104, 212, 1) 21%, rgba(121, 211, 247, 1) 87%);
+height: 100vh;
+}
+
+.section{
+    width: 50%;
+    height: 100%;
+    border: 1px solid blue;
+
+}

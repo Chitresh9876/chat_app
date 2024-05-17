@@ -1,4 +1,7 @@
-import {app} from './app.js'
+import { app } from './app.js'
+import { connectToMongoDB } from "./config/db.js";
+
+connectToMongoDB();
 
 
 app.listen(process.env.PORT, () => {
