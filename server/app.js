@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import homeRouters from "./routes/homeRouter.js";
 import chatRouter from "./routes/chatRouter.js";
 import userRoutes from "./routes/userRoutes.js";
+import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 
 config({ path: "./config/config.env" });
@@ -17,4 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', homeRouters);
 // app.use("/api/chat", chatRouter);
 app.use('/api/user', userRoutes);
+
+
+app.use(notFound);
+app.use(errorHandler);
+
 
