@@ -18,26 +18,40 @@ const Authentication = () => {
   return (
     <Stack className="contain" overflow={"hidden"} direction={"row"}>
       <div className="description section">Box 1</div>
-      <div className="auth section" >
+      <div className="auth section">
         <Container
           sx={{
             margin: tabValue ? "3rem 8rem" : "8rem",
             padding: "2rem",
             backgroundColor: "white",
             width: "auto",
-            borderRadius: "1rem 1rem 1rem 1rem",
+            borderRadius: "0.5rem",
             verticalAlign: "middle",
-            transition:""
+            transition: "",
           }}
         >
-          <Box sx={{ borderBottom: 0, borderColor: "divider", alignItems:"center" }}>
+          <Box
+            sx={{
+              borderBottom: 0,
+              borderColor: "divider",
+              alignItems: "center",
+            }}
+          >
             <Tabs value={tabValue} onChange={handleChange}>
-              <Tab sx={{ width: "50%" }} label="Sign-In" />
-              <Tab sx={{ width: "50%" }} label="Sign-Up" />
+              <Tab
+                sx={{ width: "50%" }}
+                style={{ color: "", fontWeight: "550", fontSize: "1.2rem" }}
+                label="Login"
+              />
+              <Tab
+                sx={{ width: "50%" }}
+                style={{ color: "", fontWeight: "550", fontSize: "1.2rem" }}
+                label="Register"
+              />
             </Tabs>
           </Box>
 
-          {tabValue ? <Signup/> : <Signin/>}
+          {tabValue ? <Signup /> : <Signin />}
         </Container>
       </div>
     </Stack>

@@ -30,7 +30,7 @@ const Signup = () => {
       return;
     }
 
-    axios.post("http://localhost:5000/api/user/register", { name, email, password, confirmPassword },
+    axios.post("http://localhost:5000/api/user/", { name, email, password, confirmPassword },
       {
         headers: {
           "Content-Type": "Application/json",

@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import homeRouters from "./routes/homeRouter.js";
 import chatRouter from "./routes/chatRouter.js";
 import userRoutes from "./routes/userRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 
@@ -17,7 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', homeRouters);
 // app.use("/api/chat", chatRouter);
-app.use('/api/user', userRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 
 app.use(notFound);
