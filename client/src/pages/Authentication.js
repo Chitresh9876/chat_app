@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Box, Container, Stack, Tab, Tabs, TextField, Typography } from "@mui/material";
+import { Box, Container, Stack, Tab, Tabs } from "@mui/material";
 import "../css/Authentication.css";
 import Signin from "../components/Authentication/Signin";
 import Signup from "../components/Authentication/Signup";
+import { useNavigate } from "react-router-dom";
 
 const Authentication = () => {
   const [tabValue, setTabValue] = useState(1);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = localStorage.getItem("userInfo");
+
+    if (userInfo) navigate('/chats');
+
+  }, [navigate]);
+
   useEffect(() => {
     console.log(window.location.href);
     const url = window.location.href.split("-")[1];
